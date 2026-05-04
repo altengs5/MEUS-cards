@@ -8,27 +8,93 @@
 </head>
 
 <body>
-    <div class="conteiner">
-        <h1>Meus cards</h1>
-        <div class="cards">
-            <div class="card">
-                <h2>card 1</h2>
-                <p>Informações do card</p>
-                <button class="bnt">Clique</button>
-            </div>
-            <div class="card">
-                <h2>card 2</h2>
-                <p>Mais informações</p>
-                <button class="btn">Clique</button>
-            </div>
-            <div class="card">
-                <h2>card 3</h2>
-                <p>Mais conteudo aqui</p>
-                <button class="btn">Clique</button>
-            </div>
-        </div>
+     <div class="container">
+    <h1>Meus Cards</h1>
+
+    <div class="cards">
+
+      <div class="card">
+        <h2>Card 1</h2>
+        <p>Descrição do card</p>
+        <button class="btn">Clique</button>
+      </div>
+
+      <div class="card">
+        <h2>Card 2</h2>
+        <p>Outra descrição</p>
+        <button class="btn">Clique</button>
+      </div>
+
+      <div class="card">
+        <h2>Card 3</h2>
+        <p>Mais conteúdo aqui</p>
+        <button class="btn">Clique</button>
+      </div>
 
     </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
+<style>
+    .body {
+        font-family: Arial, sans-serif;
+        background: #0f172a;
+        color: white;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: auto;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .card {
+        background: #1e293b;
+        padding: 20px;
+        border-radius: 12px;
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn {
+        margin-top: 10px;
+        padding: 10px;
+        border: none;
+        background: #3b82f6;
+        color: white;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background: #2563eb;
+    }
+</style>
+<script>
+    const buttons = document.querySelectorAll('.btn');
+
+    buttons.forEach((btn, index) => {
+        btn.addEventListener('click', () => {
+            alert(`"Você clicou no Card" ${ index + 1}`);
+    });
+});
+</script>
 
 </html>
